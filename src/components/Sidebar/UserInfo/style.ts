@@ -32,4 +32,6 @@ export const ActionsContainer = styled.div`
   margin-top: 1.5rem;
   width: 100%;
   height: 6.625rem;
+
+  border-top: 1px solid #323238;
 `;
