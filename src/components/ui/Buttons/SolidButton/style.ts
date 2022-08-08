@@ -7,4 +7,5 @@ export const SolidButtonContainer = styled.button`
   font-weight: bold;
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 `;

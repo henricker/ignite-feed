@@ -5,6 +5,12 @@ export const PostContainer = styled.div`
   margin-left: auto;
   max-width: calc(100% - 3rem);
   overflow: auto;
+
+  @media screen and (max-width: 670px) {
+    max-width: 100%;
+  }
+
+  margin-bottom: 2rem;
 `;
 
 export const PostContent = styled.div`

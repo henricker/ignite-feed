@@ -5,8 +5,10 @@ export const PostTextContent = styled.p`
   font-size: 1rem;
   font-weight: 400;
 
+  text-align: justify;
+
   margin-top: 1.5rem;
-  width: 80%;
+  width: 100%;
 `;
 
 export const PostLinkProject = styled.p`
