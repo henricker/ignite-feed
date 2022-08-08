@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.aside`
   background-color: #202024;
-  width: 16rem;
+  width: 20rem;
   height: 18.375rem;
 `;
 
