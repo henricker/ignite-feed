@@ -1,12 +1,7 @@
-import { countDiffTime } from "../../../util/count-diff-time";
-import { ProfilePost } from "./ProfilePost/ProfilePost";
-import {
-  LastPublishedCounterTime,
-  PostContainer,
-  PostContent,
-  PostHeader,
-  PostText,
-} from "./style";
+import { PostGiveFeedback } from "./PostGiveFeedback";
+import { PostHeader } from "./PostHeader";
+import { PostText } from "./PostText";
+import { PostContainer, PostContent } from "./style";
 
 type PostProps = {
   profile: {
@@ -17,27 +12,30 @@ type PostProps = {
   };
   text: string;
   portfolioLink: string;
+  hashtags: string[];
 };
 
 export const Post = ({
   profile: { name, profession, publishedAt, srcAvatar },
   portfolioLink,
   text,
+  hashtags,
 }: PostProps) => {
   return (
     <PostContainer>
       <PostContent>
-        <PostHeader>
-          <ProfilePost
-            name={name}
-            profession={profession}
-            srcAvatar={srcAvatar}
-          />
-          <LastPublishedCounterTime>
-            Publicado há {countDiffTime(publishedAt)}
-          </LastPublishedCounterTime>
-        </PostHeader>
-        <PostText>{text}</PostText>
+        <PostHeader
+          name={name}
+          profession={profession}
+          publishedAt={publishedAt}
+          srcAvatar={srcAvatar}
+        />
+        <PostText
+          hashtags={hashtags}
+          portfolioLink={portfolioLink}
+          text={text}
+        />
+        <PostGiveFeedback />
       </PostContent>
     </PostContainer>
   );
