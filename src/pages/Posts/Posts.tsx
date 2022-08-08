@@ -18,8 +18,9 @@ export const Posts = () => {
               publishedAt: dateMocked,
               srcAvatar: AvatarMocked2,
             }}
-            portfolioLink="https://www.google.com"
+            portfolioLink="jane.design/doctorcare"
             text={`Fala galeraa 👋. Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀`}
+            hashtags={["#novoprojeto", "#nlw", "#rocketseat"]}
           />
         </AllPostsContainer>
       </ContentContainer>
