@@ -1,41 +1,47 @@
+import { PostType } from "../../../interfaces/posts";
+import { PostComments } from "./PostComments";
 import { PostGiveFeedback } from "./PostGiveFeedback";
 import { PostHeader } from "./PostHeader";
 import { PostText } from "./PostText";
 import { PostContainer, PostContent } from "./style";
 
 type PostProps = {
-  profile: {
-    srcAvatar: string;
-    name: string;
-    profession: string;
-    publishedAt: Date;
-  };
-  text: string;
-  portfolioLink: string;
-  hashtags: string[];
+  post: PostType;
+
+  handleAddComment: (comment: any) => void;
+  handleDeleteComment: (data: {
+    post_id: number | string;
+    comment_id: number | string;
+  }) => void;
 };
 
 export const Post = ({
-  profile: { name, profession, publishedAt, srcAvatar },
-  portfolioLink,
-  text,
-  hashtags,
+  post,
+  handleAddComment,
+  handleDeleteComment,
 }: PostProps) => {
   return (
     <PostContainer>
       <PostContent>
         <PostHeader
-          name={name}
-          profession={profession}
-          publishedAt={publishedAt}
-          srcAvatar={srcAvatar}
+          name={post.profile.name}
+          profession={post.profile.profession}
+          publishedAt={post.profile.publishedAt}
+          srcAvatar={post.profile.srcAvatar}
         />
         <PostText
-          hashtags={hashtags}
-          portfolioLink={portfolioLink}
-          text={text}
+          hashtags={post.hashtags}
+          portfolioLink={post.portfolioLink}
+          text={post.text}
         />
-        <PostGiveFeedback />
+        <PostGiveFeedback
+          handleAddComment={handleAddComment}
+          post_id={post.id}
+        />
+        <PostComments
+          comments={post.comments}
+          handleDeleteComment={handleDeleteComment}
+        />
       </PostContent>
     </PostContainer>
   );

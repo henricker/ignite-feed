@@ -7,15 +7,15 @@ export const PostsContainer = styled.div`
 export const ContentContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: calc(100% - 20rem);
+  width: calc(100% - 40rem);
   margin: 0 auto;
   margin-top: 2rem;
 
-  @media screen and (max-width: 1000px) {
-    width: calc(100% - 5rem);
+  @media screen and (max-width: 1250px) {
+    width: calc(100% - 10rem);
   }
 
-  @media screen and (max-width: 710px) {
+  @media screen and (max-width: 760px) {
     width: calc(100% - 2rem);
   }
 
