@@ -46,7 +46,7 @@ export const PostGiveFeedback = ({
         <SolidButton
           onClick={() => {
             if (!feedBack.trim()) return;
-
+            setShowComments(true);
             handleAddComment({
               comment: feedBack.trim(),
               id: uuid(),
