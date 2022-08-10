@@ -2,11 +2,11 @@ import { CommentPostType } from "../../../../interfaces/posts";
 import { PostComment } from "./PostComment";
 import { PostCommentsContainer } from "./style";
 import { useMotionValue, useTransform } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type PostCommentsProps = {
   comments: CommentPostType[];
-
+  showComments: boolean;
   handleDeleteComment: (data: {
     post_id: number | string;
     comment_id: number | string;
@@ -15,20 +15,55 @@ type PostCommentsProps = {
 
 export const PostComments = ({
   comments,
+  showComments,
   handleDeleteComment,
 }: PostCommentsProps) => {
+  const [displayState, setDisplayState] = useState<string>("none");
+  const [firstRender, setFirstRender] = useState(true);
+  const animationOpenComments = {
+    animate: {
+      opacity: 1,
+      y: 0,
+    },
+    initial: {
+      y: -100,
+      opacity: 0,
+    },
+  };
+
+  const animationCloseComments = {
+    animate: {
+      opacity: 0,
+      y: -100,
+    },
+    initial: {
+      y: 0,
+      opacity: 1,
+    },
+  };
+
+  useEffect(() => {
+    setFirstRender(false);
+  }, []);
+
+  useEffect(() => {
+    if (showComments) {
+      setDisplayState("block");
+    }
+  }, [showComments]);
+
   return (
     <PostCommentsContainer
       transition={{
-        delay: 0.5,
+        type: "spring",
+        delay: 0.1,
       }}
-      animate={{
-        opacity: 1,
-        y: 0,
+      {...(showComments ? animationOpenComments : animationCloseComments)}
+      onAnimationComplete={() => {
+        !showComments && !firstRender && setDisplayState("none");
       }}
-      initial={{
-        y: -100,
-        opacity: 0,
+      style={{
+        display: displayState,
       }}
     >
       {comments.length > 0 &&

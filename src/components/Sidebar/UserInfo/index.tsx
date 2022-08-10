@@ -7,8 +7,8 @@ import {
   UserInfoContainer,
   UserName,
 } from "./style";
-import IconEdit from "../../../assets/icons/edit-icon.svg";
 import { authMock } from "../../../mock/auth-mock";
+import { EditIcon } from "../../ui/icons/Edit";
 
 export const UserInfo = () => {
   const auth = authMock;
@@ -20,7 +20,7 @@ export const UserInfo = () => {
       <UserName>{auth.profile.name}</UserName>
       <ProfessionalTitle>{auth.profile.profession}</ProfessionalTitle>
       <ActionsContainer>
-        <TransparentButton iconSrc={IconEdit}>
+        <TransparentButton icon={<EditIcon />}>
           Editar seu perfil
         </TransparentButton>
       </ActionsContainer>

@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { PlusMinusButton } from "../../../components/ui/Buttons/PlusMinusButton";
 import { PostType } from "../../../interfaces/posts";
 import { PostComments } from "./PostComments";
 import { PostGiveFeedback } from "./PostGiveFeedback";
@@ -20,6 +22,8 @@ export const Post = ({
   handleAddComment,
   handleDeleteComment,
 }: PostProps) => {
+  const [showComments, setShowComments] = useState(false);
+
   return (
     <PostContainer>
       <PostContent>
@@ -37,11 +41,16 @@ export const Post = ({
         <PostGiveFeedback
           handleAddComment={handleAddComment}
           post_id={post.id}
+          setShowComments={setShowComments}
+          showComments={showComments}
         />
+        {/* {showComments && ( */}
         <PostComments
+          showComments={showComments}
           comments={post.comments}
           handleDeleteComment={handleDeleteComment}
         />
+        {/* // )} */}
       </PostContent>
     </PostContainer>
   );

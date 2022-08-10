@@ -5,20 +5,19 @@ import {
 } from "./style";
 
 type TransparentButtonProps = {
-  onClick?: () => void;
-  children: string;
-  iconSrc?: string;
-};
+  children: JSX.Element | string;
+  icon?: JSX.Element;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export const TransparentButton = ({
-  onClick,
   children,
-  iconSrc,
+  icon,
+  onClick,
 }: TransparentButtonProps) => {
   return (
     <TransparentButtonContainer onClick={onClick}>
       <ContentButtonContainer>
-        {iconSrc && <img src={iconSrc} alt="icon" />}
+        {icon && icon}
         <TitleButton>{children}</TitleButton>
       </ContentButtonContainer>
     </TransparentButtonContainer>

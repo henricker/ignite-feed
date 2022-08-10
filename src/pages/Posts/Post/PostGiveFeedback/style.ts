@@ -13,3 +13,10 @@ export const TitleFeedback = styled.p`
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 `;
+
+export const ButtonsContainer = styled.div`
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background-color: yellow;
+`;

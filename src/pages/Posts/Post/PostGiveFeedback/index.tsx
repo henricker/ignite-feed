@@ -3,17 +3,26 @@ import { SolidButton } from "../../../../components/ui/Buttons/SolidButton";
 import { TextInput } from "../../../../components/ui/TextInput";
 import { CommentPostType } from "../../../../interfaces/posts";
 import { authMock } from "../../../../mock/auth-mock";
-import { PostGiveFeedbackContainer, TitleFeedback } from "./style";
+import {
+  ButtonsContainer,
+  PostGiveFeedbackContainer,
+  TitleFeedback,
+} from "./style";
 import { v4 as uuid } from "uuid";
+import { PlusMinusButton } from "../../../../components/ui/Buttons/PlusMinusButton";
 
 type PostGiveFeedbackProps = {
   handleAddComment: (comment: CommentPostType) => void;
   post_id: number;
+  showComments: boolean;
+  setShowComments: (showComments: boolean) => void;
 };
 
 export const PostGiveFeedback = ({
   handleAddComment,
   post_id,
+  setShowComments,
+  showComments,
 }: PostGiveFeedbackProps) => {
   const [feedBack, setFeedBack] = useState<string>("");
 
@@ -26,7 +35,14 @@ export const PostGiveFeedback = ({
         onChange={(e) => setFeedBack(e.target.value)}
         height="6rem"
       />
-      <div style={{ marginTop: "1rem" }}>
+      <div
+        style={{
+          marginTop: "1rem",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         <SolidButton
           onClick={() => {
             if (!feedBack.trim()) return;
@@ -49,6 +65,12 @@ export const PostGiveFeedback = ({
         >
           Publicar
         </SolidButton>
+        <PlusMinusButton
+          OnPlusMessage="Comentários"
+          OnMinusMessage="Comentários"
+          isActive={showComments}
+          setIsActive={setShowComments}
+        />
       </div>
     </PostGiveFeedbackContainer>
   );
