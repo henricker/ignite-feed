@@ -1,20 +1,8 @@
-import { useEffect, useState } from "react";
+import { CommentPostType } from "../../../../interfaces/posts";
 import { PostComment } from "./PostComment";
 import { PostCommentsContainer } from "./style";
 type PostCommentsProps = {
-  comments: {
-    profile: {
-      srcAvatar: string;
-      name: string;
-      profession: string;
-    };
-    comment: string;
-    post_id: number | string;
-    likes: number;
-    id: string | number;
-    publishedAt: Date;
-    isMe: boolean;
-  }[];
+  comments: CommentPostType[];
 
   handleDeleteComment: (data: {
     post_id: number | string;
