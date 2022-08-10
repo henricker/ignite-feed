@@ -8,15 +8,17 @@ import {
   UserName,
 } from "./style";
 import IconEdit from "../../../assets/icons/edit-icon.svg";
+import { authMock } from "../../../mock/auth-mock";
 
 export const UserInfo = () => {
+  const auth = authMock;
   return (
     <UserInfoContainer>
       <AvatarContainer>
-        <Avatar />
+        <Avatar src={auth.profile.srcAvatar} />
       </AvatarContainer>
-      <UserName>Henrique Vieira</UserName>
-      <ProfessionalTitle>Software Enginner</ProfessionalTitle>
+      <UserName>{auth.profile.name}</UserName>
+      <ProfessionalTitle>{auth.profile.profession}</ProfessionalTitle>
       <ActionsContainer>
         <TransparentButton iconSrc={IconEdit}>
           Editar seu perfil

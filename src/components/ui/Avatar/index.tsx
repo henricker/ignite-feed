@@ -1,4 +1,3 @@
-import MockedImage from "../../../assets/mock/avatar.png";
 import { ContainerAvatar, ImageAvatar } from "./style";
 
 type AvatarProps = {
@@ -8,7 +7,7 @@ type AvatarProps = {
 export const Avatar = ({ src }: AvatarProps) => {
   return (
     <ContainerAvatar>
-      <ImageAvatar width={60} src={src ?? MockedImage} alt="Avatar" />
+      <ImageAvatar width={60} src={src} alt="Avatar" />
     </ContainerAvatar>
   );
 };

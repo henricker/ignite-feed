@@ -2,11 +2,12 @@ import { Sidebar } from "../../components/Sidebar";
 import { Post } from "./Post";
 import { AllPostsContainer, ContentContainer, PostsContainer } from "./style";
 import AvatarMocked2 from "../../assets/mock/avatar2.svg";
-import AvatarMocked from "../../assets/mock/avatar.png";
 import { useState } from "react";
 import { CommentPostType, PostType } from "../../interfaces/posts";
+import { authMock } from "../../mock/auth-mock";
 
 export const Posts = () => {
+  const auth = authMock;
   const [posts, setPosts] = useState<PostType[]>([
     {
       id: 1,
@@ -22,7 +23,7 @@ export const Posts = () => {
       comments: [
         {
           profile: {
-            srcAvatar: AvatarMocked,
+            srcAvatar: auth.profile.srcAvatar,
             name: "Henrique Vieira",
             profession: "Web Developer",
           },
