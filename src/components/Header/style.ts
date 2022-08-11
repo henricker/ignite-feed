@@ -9,4 +9,13 @@ export const HeaderContainer = styled.header`
   justify-content: center;
 
   padding: 1.2rem 0rem;
+
+  @media screen and (max-width: 670px) {
+    justify-content: space-around;
+
+    img {
+      width: 170px;
+      height: 50px;
+    }
+  }
 `;
