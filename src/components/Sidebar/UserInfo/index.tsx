@@ -7,11 +7,12 @@ import {
   UserInfoContainer,
   UserName,
 } from "./style";
-import { authMock } from "../../../mock/auth-mock";
 import { EditIcon } from "../../ui/icons/Edit";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/auth";
 
 export const UserInfo = () => {
-  const auth = authMock;
+  const auth = useContext(AuthContext);
   return (
     <UserInfoContainer>
       <AvatarContainer>

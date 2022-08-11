@@ -1,15 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { SolidButton } from "../../../../components/ui/Buttons/SolidButton";
 import { TextInput } from "../../../../components/ui/TextInput";
 import { CommentPostType } from "../../../../interfaces/posts";
-import { authMock } from "../../../../mock/auth-mock";
-import {
-  ButtonsContainer,
-  PostGiveFeedbackContainer,
-  TitleFeedback,
-} from "./style";
+import { PostGiveFeedbackContainer, TitleFeedback } from "./style";
 import { v4 as uuid } from "uuid";
 import { PlusMinusButton } from "../../../../components/ui/Buttons/PlusMinusButton";
+import { AuthContext } from "../../../../contexts/auth";
 
 type PostGiveFeedbackProps = {
   handleAddComment: (comment: CommentPostType) => void;
@@ -26,7 +22,7 @@ export const PostGiveFeedback = ({
 }: PostGiveFeedbackProps) => {
   const [feedBack, setFeedBack] = useState<string>("");
 
-  const authData = authMock;
+  const authData = useContext(AuthContext);
   return (
     <PostGiveFeedbackContainer>
       <TitleFeedback>Deixe seu Feedback</TitleFeedback>
