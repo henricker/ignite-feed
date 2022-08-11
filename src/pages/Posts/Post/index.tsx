@@ -9,19 +9,9 @@ import { PostContainer, PostContent } from "./style";
 
 type PostProps = {
   post: PostType;
-
-  handleAddComment: (comment: any) => void;
-  handleDeleteComment: (data: {
-    post_id: number | string;
-    comment_id: number | string;
-  }) => void;
 };
 
-export const Post = ({
-  post,
-  handleAddComment,
-  handleDeleteComment,
-}: PostProps) => {
+export const Post = ({ post }: PostProps) => {
   const [showComments, setShowComments] = useState(false);
 
   return (
@@ -39,18 +29,11 @@ export const Post = ({
           text={post.text}
         />
         <PostGiveFeedback
-          handleAddComment={handleAddComment}
           post_id={post.id}
           setShowComments={setShowComments}
           showComments={showComments}
         />
-        {/* {showComments && ( */}
-        <PostComments
-          showComments={showComments}
-          comments={post.comments}
-          handleDeleteComment={handleDeleteComment}
-        />
-        {/* // )} */}
+        <PostComments showComments={showComments} comments={post.comments} />
       </PostContent>
     </PostContainer>
   );

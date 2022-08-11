@@ -6,21 +6,21 @@ import { PostGiveFeedbackContainer, TitleFeedback } from "./style";
 import { v4 as uuid } from "uuid";
 import { PlusMinusButton } from "../../../../components/ui/Buttons/PlusMinusButton";
 import { AuthContext } from "../../../../contexts/auth";
+import { usePosts } from "../hooks/usePosts";
 
 type PostGiveFeedbackProps = {
-  handleAddComment: (comment: CommentPostType) => void;
   post_id: number;
   showComments: boolean;
   setShowComments: (showComments: boolean) => void;
 };
 
 export const PostGiveFeedback = ({
-  handleAddComment,
   post_id,
   setShowComments,
   showComments,
 }: PostGiveFeedbackProps) => {
   const [feedBack, setFeedBack] = useState<string>("");
+  const { handleAddComment } = usePosts();
 
   const authData = useContext(AuthContext);
   return (

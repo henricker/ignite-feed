@@ -1,23 +1,17 @@
 import { CommentPostType } from "../../../../interfaces/posts";
 import { PostComment } from "./PostComment";
 import { PostCommentsContainer } from "./style";
-import { useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
+import { usePosts } from "../hooks/usePosts";
 
 type PostCommentsProps = {
   comments: CommentPostType[];
   showComments: boolean;
-  handleDeleteComment: (data: {
-    post_id: number | string;
-    comment_id: number | string;
-  }) => void;
 };
 
-export const PostComments = ({
-  comments,
-  showComments,
-  handleDeleteComment,
-}: PostCommentsProps) => {
+export const PostComments = ({ comments, showComments }: PostCommentsProps) => {
+  const { handleDeleteComment } = usePosts();
+
   const [displayState, setDisplayState] = useState<string>("none");
   const [firstRender, setFirstRender] = useState(true);
   const animationOpenComments = {
