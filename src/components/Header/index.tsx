@@ -8,7 +8,6 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      {width <= 670 && <AiOutlineMenu color="#00b37e" fontSize="2rem" />}
       <img src={logo} alt="Logo" />
     </HeaderContainer>
   );

@@ -11,7 +11,7 @@ export const Posts = () => {
   return (
     <PostsContainer>
       <ContentContainer>
-        {width > 670 && <Sidebar />}
+        <Sidebar />
         <AllPostsContainer>
           {posts.map((post) => (
             <Post post={post} key={post.id} />

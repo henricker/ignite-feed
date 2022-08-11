@@ -21,6 +21,10 @@ export const ContentContainer = styled.div`
 
   @media screen and (max-width: 670px) {
     width: calc(100% - 1rem);
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0rem;
+    gap: 1rem;
   }
 `;
 
@@ -33,5 +37,9 @@ export const AllPostsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  @media screen and (max-width: 350px) {
+    font-size: 75%;
   }
 `;

@@ -14,6 +14,12 @@ const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased !important;
         font-family: 'Roboto', sans-serif;
     }
+
+    @media screen and (max-width: 670px) {
+        html {
+            font-size: 87.5%;
+        }
+    }
 `;
 
 export default GlobalStyle;
