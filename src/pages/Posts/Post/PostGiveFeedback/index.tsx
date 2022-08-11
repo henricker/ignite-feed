@@ -6,7 +6,7 @@ import { PostGiveFeedbackContainer, TitleFeedback } from "./style";
 import { v4 as uuid } from "uuid";
 import { PlusMinusButton } from "../../../../components/ui/Buttons/PlusMinusButton";
 import { AuthContext } from "../../../../contexts/auth";
-import { usePosts } from "../hooks/usePosts";
+import { usePosts } from "../../hooks/usePosts";
 
 type PostGiveFeedbackProps = {
   post_id: number;

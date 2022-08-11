@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
-import { AuthContext } from "../../../../contexts/auth";
-import { CommentPostType, PostType } from "../../../../interfaces/posts";
-import AvatarMocked2 from "../../../../assets/mock/avatar2.svg";
+import { AuthContext } from "../../../contexts/auth";
+import { CommentPostType, PostType } from "../../../interfaces/posts";
+import AvatarMocked2 from "../../../assets/mock/avatar2.svg";
 
 type UsePostsContextProps = {
   posts: PostType[];

@@ -1,7 +1,7 @@
 import { Sidebar } from "../../components/Sidebar";
 import { Post } from "./Post";
 import { AllPostsContainer, ContentContainer, PostsContainer } from "./style";
-import { usePosts, UsePostsProvider } from "./Post/hooks/usePosts";
+import { usePosts, UsePostsProvider } from "./hooks/usePosts";
 
 export const Posts = () => {
   const { posts } = usePosts();

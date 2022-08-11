@@ -2,7 +2,7 @@ import { CommentPostType } from "../../../../interfaces/posts";
 import { PostComment } from "./PostComment";
 import { PostCommentsContainer } from "./style";
 import { useEffect, useState } from "react";
-import { usePosts } from "../hooks/usePosts";
+import { usePosts } from "../../hooks/usePosts";
 
 type PostCommentsProps = {
   comments: CommentPostType[];
