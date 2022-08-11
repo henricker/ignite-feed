@@ -7,6 +7,7 @@ export const PostContainer = styled.div`
   overflow: auto;
 
   @media screen and (max-width: 670px) {
+    width: 100%;
     max-width: 100%;
   }
 
