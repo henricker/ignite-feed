@@ -22,6 +22,33 @@ export const UsePostsProvider = ({ children }: { children: any }) => {
   const auth = useContext(AuthContext);
   const [posts, setPosts] = useState([
     {
+      id: 3,
+      profile: {
+        name: "Jane Cooper",
+        profession: "Dev Front-End",
+        publishedAt: new Date("2022-08-07 00:00:00"),
+        srcAvatar: AvatarMocked2,
+      },
+      portfolioLink: "jane.design/doctorcare",
+      text: `Hi bros! 👋. I finish my project, your name is youtube discord bot!🚀`,
+      hashtags: ["#novoprojeto", "#nlw", "#rocketseat"],
+      comments: [
+        {
+          profile: {
+            srcAvatar: auth.profile.srcAvatar,
+            name: "Henrique Vieira",
+            profession: "Web Developer",
+          },
+          post_id: 3,
+          comment: "Great JOB!, I'm very happy with the result!",
+          likes: 10,
+          publishedAt: new Date("2022-08-08 13:00:00"),
+          id: 1,
+          isMe: true,
+        },
+      ],
+    },
+    {
       id: 2,
       profile: {
         name: "Jim Brown",
